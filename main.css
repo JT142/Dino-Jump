@@ -39,8 +39,10 @@ h1 {
     right: 0px;
 
     background-color: slategray;
+}
 
-    animation: left 2s infinite linear;
+.slidingLeft {
+    animation: left 2s linear;
 }
 
 .moving {

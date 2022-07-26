@@ -13,22 +13,26 @@ $(() => {
     $dino.addClass(MOVING);
     let isDinoJumping = false;
 
-    const totalScore = () => {
+    const getScore = () => {
         const text = $scoreCounter.text();
         const score = parseInt(text.slice(SCORE_PREFIX.length))
         return score;
     }
 
-    const countScore = () => {
-        if (Math.round($obstacle.position()) === $border.position()) {
-            $scoreCounter.text(SCORE_PREFIX + (totalScore + 1))
-
+    const maybeIncrementScore = () => {
+        const obstaclePosition = $obstacle.position();
+        const { left: obstacleLeft } = obstaclePosition;
+        if (obstacleLeft < 10) {
+            $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
+            $obstacle.removeClass('slidingLeft')
+            window.requestAnimationFrame(() => {
+                $obstacle.addClass('slidingLeft')
+            })
         }
+        window.requestAnimationFrame(maybeIncrementScore)
     }
 
-    setInterval(() => {
-        countScore();
-    }, 500)
+    window.requestAnimationFrame(maybeIncrementScore)
 
     const jump = () => {
         if (isDinoJumping) {
