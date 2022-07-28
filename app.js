@@ -13,34 +13,15 @@ $(() => {
     $dino.addClass(MOVING);
     let isDinoJumping = false;
 
-    const getScore = () => {
-        const text = $scoreCounter.text();
-        const score = parseInt(text.slice(SCORE_PREFIX.length))
-        return score;
-    }
-
-    const maybeIncrementScore = () => {
-        const obstaclePosition = $obstacle.position();
-        const { left: obstacleLeft } = obstaclePosition;
-        if (obstacleLeft < 10) {
-            $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
-            $obstacle.removeClass('slidingLeft')
-            window.requestAnimationFrame(() => {
-                $obstacle.addClass('slidingLeft')
-            })
-        }
-        window.requestAnimationFrame(maybeIncrementScore)
-    }
-
-    window.requestAnimationFrame(maybeIncrementScore)
-
     const jump = () => {
+        $('audio#jump')[0].play()
         if (isDinoJumping) {
             return;
         }
         isDinoJumping = true;
         $dino.removeClass(MOVING);
         $dino.addClass(JUMPING);
+
         setTimeout(function () {
             $dino.removeClass(JUMPING);
             isDinoJumping = false;
@@ -75,10 +56,34 @@ $(() => {
         )
     }
 
-    setInterval(() => {
+    const getScore = () => {
+        const text = $scoreCounter.text();
+        const score = parseInt(text.slice(SCORE_PREFIX.length))
+        return score;
+    }
+
+    const checkScoreOrLose = () => {
+        const obstaclePosition = $obstacle.position();
+        const { left: obstacleLeft } = obstaclePosition;
         if (isOverlapping($dino, $obstacle)) {
-            alert("Game Over");
+            $('audio#gameover')[0].play();
+            window.requestAnimationFrame(() => {
+                alert("Game Over");
+                $obstacle.removeClass('slidingLeft')
+                window.requestAnimationFrame(() => {
+                    $obstacle.addClass('slidingLeft')
+                })
+            });
+        } else if (obstacleLeft < 10) {
+            $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
+            $obstacle.removeClass('slidingLeft')
+            window.requestAnimationFrame(() => {
+                $obstacle.addClass('slidingLeft')
+            })
         }
-    }, 50)
+        window.requestAnimationFrame(checkScoreOrLose)
+    }
+
+    window.requestAnimationFrame(checkScoreOrLose)
 })
 

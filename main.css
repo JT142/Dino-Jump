@@ -41,9 +41,34 @@ h1 {
     background-color: slategray;
 }
 
-.slidingLeft {
-    animation: left 2s linear;
+#cloud1 {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+    background-size: 30px 30px;
+    background-image: url("/Users/Jabelle/Desktop/dino-jump/cloud.png")
 }
+
+#cloud2 {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 30px;
+    left: 150px;
+
+    background-size: 30px 30px;
+    background-image: url("/Users/Jabelle/Desktop/dino-jump/cloud.png")
+}
+
+.slidingLeft {
+    animation: left 2.5s linear infinite;
+}
+
 
 .moving {
     animation: move 1s infinite;
@@ -53,9 +78,17 @@ h1 {
     animation: move 0.2s infinite, jump 1s;
 }
 
+.swaying1 {
+    animation: sway1 3s infinite linear;
+}
+
+.swaying2 {
+    animation: sway2 3s infinite linear;
+}
+
 @keyframes move {
-    0%, 49.99% {background-image: url("/Users/Jabelle/Desktop/seif-10/unit1/student_examples/W5D3/Dino-jump-brainstorm/Dinoleft.png")}
-    50%, 100% {background-image: url("/Users/Jabelle/Desktop/seif-10/unit1/student_examples/W5D3/Dino-jump-brainstorm/Dinoright.png")}
+    0%, 49.99% {background-image: url("/Users/Jabelle/Desktop/dino-jump/Dinoleft.png")}
+    50%, 100% {background-image: url("/Users/Jabelle/Desktop/dino-jump/Dinoright.png")}
 }
  
 
@@ -78,5 +111,29 @@ h1 {
 
     100% {
         left: 0px;
+    }
+}
+
+@keyframes sway1 {
+    0% {
+        right: 50px;
+    }
+    50% {
+        right: 30px;
+    }
+    100% {
+        right: 50px;
+    }
+}
+
+@keyframes sway2 {
+    0% {
+        left: 150px;
+    }
+    50% {
+        left: 130px;
+    }
+    100% {
+        left: 150px;
     }
 }
