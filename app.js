@@ -6,6 +6,7 @@ const SCORE_PREFIX = 'Score: ';
 $(() => {
     const $dino = $('#dino');
     const $obstacle = $('#obstacle');
+    const $obstacle2 = $('#obstacle2');
     const $border = $('#border');
     const $scoreCounter = $('#counter');
 
@@ -62,6 +63,10 @@ $(() => {
         return score;
     }
 
+    // Increase speed 
+
+
+
     const checkScoreOrLose = () => {
         const obstaclePosition = $obstacle.position();
         const { left: obstacleLeft } = obstaclePosition;
@@ -85,5 +90,46 @@ $(() => {
     }
 
     window.requestAnimationFrame(checkScoreOrLose)
+
+    const checkScoreOrLoseObstacle2 = () => {
+        const obstacle2Position = $obstacle2.position();
+        const { left: obstacle2Left } = obstacle2Position;
+        if (isOverlapping($dino, $obstacle2)) {
+            $('audio#gameover')[0].play();
+            window.requestAnimationFrame(() => {
+                alert("Game Over");
+                $obstacle2.removeClass('slidingLeftSpeedUp')
+                window.requestAnimationFrame(() => {
+                    $obstacle2.addClass('slidingLeftSpeedUp')
+                })
+            });
+        } else if (obstacle2Left < 10) {
+            $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
+            $obstacle2.removeClass('slidingLeftSpeedUp')
+            window.requestAnimationFrame(() => {
+                $obstacle2.addClass('slidingLeftSpeedUp')
+            })
+        }
+        window.requestAnimationFrame(checkScoreOrLoseObstacle2)
+    }
+
+    window.requestAnimationFrame(checkScoreOrLoseObstacle2)
 })
+
+
+// Next steps:
+// 1. Add more obstacles 
+// 2. Increase speed -> maybe increase speed once we hit score 3 and then another time at 6?
+// 3. Implement a start game page
+// 4. Reset score to 0 once game is over 
+// 5. Add speech bubble of Dino giving instructions (make it disappear after 5 secs)
+// 6. Implement 2 player? 
+// 7. Implement high score? 
+// 8. Write a README.md: https://github.com/chrysaliswoon/catris-game
+
+// Styling - next steps:
+// 1. Change block to an obstacle PNG 
+// 2. Add environment pixel background
+
+
 
