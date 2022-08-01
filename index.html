@@ -23,17 +23,33 @@
 
 <body>
     <h1> Dino Jump</h1>
-    <br>
-    <br>
     <h2 id="counter"> Score: 0 </h2>
-    <div id="border">
-        <div id="dino"></div>
-        <div id="obstacle" class="slidingLeft"></div>
-        <div id="obstacle2" class="slidingLeftSpeedUp"></div> 
-        <div id="cloud1" src="/Users/Jabelle/Desktop/dino-jump/cloud.png"
-            class="swaying1">
+
+    <div id="start-screen">
+        <!-- <div id="start-screen" class="screen" style="display: block">
+            <button id="start-button"> Start Game </button>
+        </div> -->
+
+        <div id="game-screen">
+            <div id="dino"></div>
+            <h3> Help Dino jump over obstacles </h3>
+            <h4> Press any key to start!</h4>
+            <div id="obstacle" class="slidingLeft"></div>
+            <div id="obstacle2" class="slidingLeftSpeedUp"></div>
+            <div id="cloud1" class="swaying1"></div>
+            <div id="cloud2" class="swaying2"></div>
+            <div id="ground"></div>
+
         </div>
-        <div id="cloud2" src="/Users/Jabelle/Desktop/dino-jump/cloud.png" class="swaying2"></div>
+
+        <!-- <div id="score-screen">
+            <h1>Score Board</h1>
+            <ol>
+                <li></li>
+                <li></li>
+            </ol>
+        </div> -->
+
         <script src="app.js"></script>
 </body>
 

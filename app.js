@@ -4,11 +4,23 @@ const MOVING = 'moving';
 const SCORE_PREFIX = 'Score: ';
 
 $(() => {
+
     const $dino = $('#dino');
     const $obstacle = $('#obstacle');
     const $obstacle2 = $('#obstacle2');
-    const $border = $('#border');
     const $scoreCounter = $('#counter');
+    const $instruction1 = $('h3')
+    const $instruction2 = $('h4')
+
+
+    // Only start game once spacebar is pressed - stuck! 
+
+    $('body').on("keydown", function (e) {
+        if (e.keyCode == SPACEBAR_KEY_ID) {
+            $instruction1.hide()
+            $instruction2.hide()
+        }
+    });
 
     // Setup
     $dino.addClass(MOVING);
@@ -65,8 +77,6 @@ $(() => {
 
     // Increase speed 
 
-
-
     const checkScoreOrLose = () => {
         const obstaclePosition = $obstacle.position();
         const { left: obstacleLeft } = obstaclePosition;
@@ -114,22 +124,21 @@ $(() => {
     }
 
     window.requestAnimationFrame(checkScoreOrLoseObstacle2)
+
 })
 
 
 // Next steps:
-// 1. Add more obstacles 
-// 2. Increase speed -> maybe increase speed once we hit score 3 and then another time at 6?
-// 3. Implement a start game page
-// 4. Reset score to 0 once game is over 
-// 5. Add speech bubble of Dino giving instructions (make it disappear after 5 secs)
-// 6. Implement 2 player? 
-// 7. Implement high score? 
-// 8. Write a README.md: https://github.com/chrysaliswoon/catris-game
+
+// 1. Increase speed -> maybe increase speed once we hit score 3 and then another time at 6?
+// 2. Implement a start game page - stuck 
+// 3. Reset score to 0 once game is over - stuck
+// 4. Implement high score? - Add?
+// 5. Write a README.md: https://github.com/chrysaliswoon/catris-game
+
 
 // Styling - next steps:
-// 1. Change block to an obstacle PNG 
-// 2. Add environment pixel background
+// 1. Add environment pixel background - Stuck
 
 
 

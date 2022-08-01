@@ -1,17 +1,58 @@
-#border {
+
+#start-screen {
     position: relative;
     margin: auto;
     height: 200px;
     width: 600px;
     border: 1px solid slategray;
-    /* background-image: url("Insert here"); */
+    /* background-image: url("./images/background.png");
+    background-size: 500px 300px; */
+}
 
+#ground {
+    position: absolute;
+    width: 300%;
+    bottom: 0px;
+    /* left: calc(var(--left)*1%) */
+    background-image: url("./images/background.png");
+    background-size: 500px 300px;
+
+}
+
+#score-screen{
+    position: absolute;
+    margin: auto;
+    height: 200px;
+    width: 200px;
+    border: 1px solid slategray;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     margin:auto;
     text-align: center;
     font-family: 'Common Pixel', sans-serif;                                            
+}
+
+h3 {
+    margin:auto;
+    text-align: center;
+    font-family: 'Common Pixel', sans-serif;      
+}
+
+h4 {
+    margin:auto;
+    text-align: center;
+    font-family: 'Common Pixel', sans-serif;      
+}
+
+#start-screen {
+    position: absolute;
+    font-size: 5vim;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #counter {
@@ -32,25 +73,25 @@ h1 {
 }
 
 #obstacle {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 
     position: absolute;
     bottom: 0px;
-    right: 0px;
 
-    background-color: slategray;
+    background-image: url("./images/catusOne.png");
+    background-size: 40px 40px;
 }
 
 #obstacle2 {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 
     position: absolute;
     bottom: 0px;
-    right: 0px;
 
-    background-color: cornflowerblue;
+    background-image: url("./images/catusOne.png");
+    background-size: 40px 40px;
 }
 
 #cloud1 {
@@ -82,16 +123,17 @@ body {
 }
 
 .slidingLeft {
-    animation: left 3.5s linear infinite;
+    animation: left 4.5s linear infinite;
 }
 
 .slidingLeftSpeedUp {
-    animation: left 1.8s linear infinite;
+    animation: left 2.17s linear infinite;
 }
 
 .moving {
     animation: move 1s infinite;
 }
+
 
 .jumping {
     animation: move 0.15s infinite, jump 1s;
@@ -103,6 +145,10 @@ body {
 
 .swaying2 {
     animation: sway2 3s infinite linear;
+}
+
+.hideElement {
+    display: none;
 }
 
 @keyframes move {
