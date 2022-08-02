@@ -86,6 +86,10 @@ $(() => {
         return score;
     }
 
+    const resetScore = () => {
+        $scoreCounter.text('Score: 0')
+    }
+
 
     const checkScoreOrLose = () => {
         const obstaclePosition = $obstacle.position();
@@ -94,6 +98,7 @@ $(() => {
             $('audio#gameover')[0].play();
             window.requestAnimationFrame(() => {
                 alert("Game Over");
+                resetScore();
                 $obstacle.removeClass('slidingLeft')
                 window.requestAnimationFrame(() => {
                     $obstacle.addClass('slidingLeft')
@@ -126,6 +131,7 @@ $(() => {
             $('audio#gameover')[0].play();
             window.requestAnimationFrame(() => {
                 alert("Game Over");
+                resetScore();
                 $obstacle2.removeClass('slidingLeftSpeedUp')
                 window.requestAnimationFrame(() => {
                     $obstacle2.addClass('slidingLeftSpeedUp')
@@ -150,7 +156,7 @@ $(() => {
 
 // 1. Increase speed -> To increase speed once score hits 5
 // 2. Implement a start game page 
-// 3. Reset score to 0 once game is over 
+// 3. Reset score to 0 once game is over - Done
 // 4. Fix Game over bug (clicked Ok, but infinite game overs -> How to restart the game smoothly?)
 // 5. Write a README.md: https://github.com/chrysaliswoon/catris-game
 
