@@ -1,4 +1,5 @@
 const SPACEBAR_KEY_ID = 32;
+const ENTER_KEY_ID = 13;
 const JUMPING = 'jumping';
 const MOVING = 'moving';
 const SCORE_PREFIX = 'Score: ';
@@ -10,29 +11,21 @@ $(() => {
     const $obstacle2 = $('#obstacle2');
     const $scoreCounter = $('#counter');
     const $instruction1 = $('h3')
-    const $startScreen = $('#start-screen')
-    const $gameScreen = $('#game-screen')
+    const $instruction2 = $('h4')
 
+    //This will inactivate checkScoreOrLose at the start till enter is pressed
+    //But now that I've implemented this, the checkSocreOrLose function won't run anymore
+    let obstacleInvisible = true;
 
-    // Only start game once start is pressed - stuck! 
-
-    // $gameScreen.hide()
-
-    // const startGame = () => {
-    //     $('#start-button').click(function () {
-    //         $startScreen.hide();
-    //         $gameScreen.show();
-    //     })
-    // }
-
-    // startGame();
-
+    // Only start game once enter is pressed - stuck! 
     $('body').on("keydown", function (e) {
-        if (e.keyCode == SPACEBAR_KEY_ID) {
-            $instruction1.hide()
+        if (e.keyCode == ENTER_KEY_ID) {
+            $instruction1.hide();
+            $instruction2.hide();
+            obstacleInvisible = false;
+            $dino.addClass(MOVING);
         }
     });
-
 
     // Setup
     $dino.addClass(MOVING);
@@ -60,6 +53,7 @@ $(() => {
         }
     });
 
+    // Check if Dino and Obstacles overlap (Lose condition)
     const isOverlapping = (element1, element2) => {
         const width1 = element1.width()
         const width2 = element2.width()
@@ -81,17 +75,19 @@ $(() => {
         )
     }
 
+    // Get current score 
     const getScore = () => {
         const text = $scoreCounter.text();
         const score = parseInt(text.slice(SCORE_PREFIX.length))
         return score;
     }
 
+
     const resetScore = () => {
         $scoreCounter.text('Score: 0')
     }
 
-
+    // Increase score by one or alert game over 
     const checkScoreOrLose = () => {
         const obstaclePosition = $obstacle.position();
         const { left: obstacleLeft } = obstaclePosition;
@@ -114,18 +110,20 @@ $(() => {
                 $obstacle.addClass('slidingLeftFaster')
             })
         }
-        else if(obstacleLeft < 10) {
+        else if (obstacleLeft < 10) {
             $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
             $obstacle.removeClass('slidingLeft')
             window.requestAnimationFrame(() => {
                 $obstacle.addClass('slidingLeft')
             })
         }
-
         window.requestAnimationFrame(checkScoreOrLose)
     }
 
-    window.requestAnimationFrame(checkScoreOrLose)
+    // When 'enter' is pressed, game is started and we can start checking for losing condition
+    if (obstacleInvisible = false) {
+        window.requestAnimationFrame(checkScoreOrLose)
+    }
 
     const checkScoreOrLoseObstacle2 = () => {
         const obstacle2Position = $obstacle2.position();
@@ -150,18 +148,21 @@ $(() => {
         window.requestAnimationFrame(checkScoreOrLoseObstacle2)
     }
 
-    window.requestAnimationFrame(checkScoreOrLoseObstacle2)
+    // When 'enter' is pressed, game is started and we can start checking for losing condition
+    if (obstacleInvisible = false) {
+        window.requestAnimationFrame(checkScoreOrLoseObstacle2)
+    }
 
 })
 
 
 // Next steps:
 
-// 1. Increase speed -> To increase speed once score hits 5- Done 
-// 2. Implement a start game page 
-// 3. Reset score to 0 once game is over - Done
-// 4. Fix Game over bug (clicked Ok, but infinite game overs -> How to restart the game smoothly?)
-// 5. Write a README.md: https://github.com/chrysaliswoon/catris-game
+// 1. Implement start game only when 'Enter' is pressed - Stuck
+// 2. Fix Game Over bug (Infinite alerts instead of restarting the game) 
+// 3. Increase speed -> To increase speed once score hits 5 - Done
+// 4. Reset score to 0 once game is over - Done
+// 5. Write a README.md: https://github.com/chrysaliswoon/catris-game - Pending 
 
 
 
