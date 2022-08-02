@@ -7,14 +7,6 @@
     border: 1px solid slategray;
 }
 
-#ground {
-    position: absolute;
-    width: 300%;
-    bottom: 0px;
-    background-image: url("./images/background.png");
-    background-size: 500px 300px;
-}
-
 h1 {
     margin:auto;
     text-align: center;
@@ -51,25 +43,15 @@ h4 {
     background-image: url("./images/Dinoleft.png")
 }
 
-#obstacle {
+.obstacle {
     width: 40px;
     height: 40px;
 
     position: absolute;
+    right: 0;
     bottom: 0px;
 
-    background-image: url("./images/catusOne.png");
-    background-size: 40px 40px;
-}
-
-#obstacle2 {
-    width: 40px;
-    height: 40px;
-
-    position: absolute;
-    bottom: 0px;
-
-    background-image: url("./images/catusOne.png");
+    background-image: url("./images/cactusOne.png");
     background-size: 40px 40px;
 }
 
@@ -99,18 +81,6 @@ h4 {
 
 body {
     font-family: 'Common Pixel';
-}
-
-.slidingLeft {
-    animation: left 4.5s linear infinite;
-}
-
-.slidingLeftSpeedUp {
-    animation: left 2.17s linear infinite;
-}
-
-.slidingLeftFaster {
-    animation: left 3s linear infinite;
 }
 
 .moving {
