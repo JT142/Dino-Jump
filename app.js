@@ -25,13 +25,14 @@ $(() => {
     //     })
     // }
 
+    // startGame();
+
     $('body').on("keydown", function (e) {
         if (e.keyCode == SPACEBAR_KEY_ID) {
             $instruction1.hide()
         }
     });
 
-    // startGame();
 
     // Setup
     $dino.addClass(MOVING);
@@ -104,21 +105,23 @@ $(() => {
                     $obstacle.addClass('slidingLeft')
                 })
             });
-        } if (obstacleLeft < 10) {
+        }
+        // Increase speed when score >= 5 
+        if (obstacleLeft < 10 && getScore() >= 5) {
+            $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
+            $obstacle.removeClass('slidingLeft')
+            window.requestAnimationFrame(() => {
+                $obstacle.addClass('slidingLeftFaster')
+            })
+        }
+        else if(obstacleLeft < 10) {
             $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
             $obstacle.removeClass('slidingLeft')
             window.requestAnimationFrame(() => {
                 $obstacle.addClass('slidingLeft')
             })
         }
-        // Increase speed when score >= 5 
-        // else if (obstacleLeft < 10 && score >= 5) {
-        //     $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
-        //     $obstacle.removeClass('slidingLeft')
-        //     window.requestAnimationFrame(() => {
-        //         $obstacle.addClass('slidingLeftFaster')
-        //     })
-        // }
+
         window.requestAnimationFrame(checkScoreOrLose)
     }
 
@@ -154,7 +157,7 @@ $(() => {
 
 // Next steps:
 
-// 1. Increase speed -> To increase speed once score hits 5
+// 1. Increase speed -> To increase speed once score hits 5- Done 
 // 2. Implement a start game page 
 // 3. Reset score to 0 once game is over - Done
 // 4. Fix Game over bug (clicked Ok, but infinite game overs -> How to restart the game smoothly?)

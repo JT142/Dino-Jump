@@ -115,7 +115,7 @@ body {
 }
 
 .slidingLeftFaster {
-    animation: left 2s linear infinite;
+    animation: left 3s linear infinite;
 }
 
 .moving {
