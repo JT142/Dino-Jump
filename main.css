@@ -1,11 +1,19 @@
-
+/* 
 #start-screen {
+    position: absolute;
+    font-size: 5vim;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+#game-screen {
     position: relative;
     margin: auto;
     height: 200px;
     width: 600px;
     border: 1px solid slategray;
-    /* background-image: url("./images/background.png");
+    /* background-image: url("./images/background2.png");
     background-size: 500px 300px; */
 }
 
@@ -13,20 +21,9 @@
     position: absolute;
     width: 300%;
     bottom: 0px;
-    /* left: calc(var(--left)*1%) */
     background-image: url("./images/background.png");
     background-size: 500px 300px;
 
-}
-
-#score-screen{
-    position: absolute;
-    margin: auto;
-    height: 200px;
-    width: 200px;
-    border: 1px solid slategray;
-    display: flex;
-    flex-direction: column;
 }
 
 h1 {
@@ -41,19 +38,6 @@ h3 {
     font-family: 'Common Pixel', sans-serif;      
 }
 
-h4 {
-    margin:auto;
-    text-align: center;
-    font-family: 'Common Pixel', sans-serif;      
-}
-
-#start-screen {
-    position: absolute;
-    font-size: 5vim;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 #counter {
     margin: auto;
@@ -128,6 +112,10 @@ body {
 
 .slidingLeftSpeedUp {
     animation: left 2.17s linear infinite;
+}
+
+.slidingLeftFaster {
+    animation: left 2s linear infinite;
 }
 
 .moving {

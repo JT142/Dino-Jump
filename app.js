@@ -10,17 +10,28 @@ $(() => {
     const $obstacle2 = $('#obstacle2');
     const $scoreCounter = $('#counter');
     const $instruction1 = $('h3')
-    const $instruction2 = $('h4')
+    const $startScreen = $('#start-screen')
+    const $gameScreen = $('#game-screen')
 
 
-    // Only start game once spacebar is pressed - stuck! 
+    // Only start game once start is pressed - stuck! 
+
+    // $gameScreen.hide()
+
+    // const startGame = () => {
+    //     $('#start-button').click(function () {
+    //         $startScreen.hide();
+    //         $gameScreen.show();
+    //     })
+    // }
 
     $('body').on("keydown", function (e) {
         if (e.keyCode == SPACEBAR_KEY_ID) {
             $instruction1.hide()
-            $instruction2.hide()
         }
     });
+
+    // startGame();
 
     // Setup
     $dino.addClass(MOVING);
@@ -75,7 +86,6 @@ $(() => {
         return score;
     }
 
-    // Increase speed 
 
     const checkScoreOrLose = () => {
         const obstaclePosition = $obstacle.position();
@@ -89,13 +99,21 @@ $(() => {
                     $obstacle.addClass('slidingLeft')
                 })
             });
-        } else if (obstacleLeft < 10) {
+        } if (obstacleLeft < 10) {
             $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
             $obstacle.removeClass('slidingLeft')
             window.requestAnimationFrame(() => {
                 $obstacle.addClass('slidingLeft')
             })
         }
+        // Increase speed when score >= 5 
+        // else if (obstacleLeft < 10 && score >= 5) {
+        //     $scoreCounter.text(SCORE_PREFIX + (getScore() + 1))
+        //     $obstacle.removeClass('slidingLeft')
+        //     window.requestAnimationFrame(() => {
+        //         $obstacle.addClass('slidingLeftFaster')
+        //     })
+        // }
         window.requestAnimationFrame(checkScoreOrLose)
     }
 
@@ -130,15 +148,12 @@ $(() => {
 
 // Next steps:
 
-// 1. Increase speed -> maybe increase speed once we hit score 3 and then another time at 6?
-// 2. Implement a start game page - stuck 
-// 3. Reset score to 0 once game is over - stuck
-// 4. Implement high score? - Add?
+// 1. Increase speed -> To increase speed once score hits 5
+// 2. Implement a start game page 
+// 3. Reset score to 0 once game is over 
+// 4. Fix Game over bug (clicked Ok, but infinite game overs -> How to restart the game smoothly?)
 // 5. Write a README.md: https://github.com/chrysaliswoon/catris-game
 
-
-// Styling - next steps:
-// 1. Add environment pixel background - Stuck
 
 
 
