@@ -4,7 +4,7 @@ const JUMPING = 'jumping';
 const MOVING = 'moving';
 const SCORE_PREFIX = 'Score: ';
 const JUMP_COOLDOWN_MS = 1000;
-const GAME_OVER_MESSAGE = 'Game Over. Press OK to restart.';
+const GAME_OVER_MESSAGE = 'Game Over. Press close to restart.';
 const COLLISION_THRESHOLD_PX = 10;
 const INCREASE_DIFFICULTY_SCORE_THRESHOLD = 5;
 const OBSTACLE_ANIMATION_FIXED_DURATION = 2000;
@@ -68,7 +68,7 @@ $(() => {
     $dino.removeClass(MOVING);
     $dino.addClass(JUMPING);
 
-    setTimeout(function() {
+    setTimeout(function () {
       $dino.removeClass(JUMPING);
       isDinoJumping = false;
       $dino.addClass(MOVING);
