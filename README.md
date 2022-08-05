@@ -29,18 +29,60 @@ The goal of the game is to get as many points as possible.
 * When Dino collides with an object, "Game Over" should pop out on the screen 
 * Game should restart after closing the pop out
 
-![Wireframe] (https://github.com/JT142/Dino-Jump/blob/main/images/Wireframe.png?raw=true)
-![Flowchart] (https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png?raw=true)
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/JT142/Dino-Jump/blob/main/images/Wireframe.png?raw=true">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png?raw=true">
+</p>
 
 <br> 
 
 ### Approach:
-* Create a game border. Make sure game border can be dynamically adjusted 
-* Create vectors that represent Dinosaur and obstacles
-* Make obstacles move towards Dinosaur 
-* Allow Dinosaur to jump. Animate jump
+
+1. Create a game border. Make sure game border can be dynamically adjusted 
+
+2. Obstacles
+* Make two obstacles with random speeds that will move towards the left 
+* They should disappear once they hit the left border, and reappear again in an infinite loop
+
+<p align="center">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Creating%20blocks.gif?raw=true">
+</p>
+
+3. Dinosaur
+* Create a dinosaur sprite that can jump
+* Dinosaur should be walking at all times
+* I thought it'd be cute if his legs moved faster whilst in the air, so I added that 
+* Dinosaur's jump should look realistic and adhere to gravity. I came across a formula called cubic bezier that helped to make the jump animation more realistic.
+<p align="center">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Creating%20Dino.gif?raw=true">
+</p>
+
+<p align="center">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/cubicbezier.gif?raw=true">
+</p>
+<p align="center"> This [website] (https://cubic-bezier.com/#.17,.67,.83,.67) lets you play around with the formula</p>
+
+4. Game logic
+* Implemented a scoring and losing system 
+* Implemented a start page where users could test out the game, and when ready, start by pressing "enter" on their keyboard 
+* Added instructions
+
+5. Game visuals
+* Ended off by adding to the game visuals, styling the fonts, adding clouds and sound effects 
 * Create game logic: Scoring and losing system 
-* Add game visuals: Styling for fonts, add sprites, animations and sound effects
+
+<p align="center">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Final.gif?raw=true">
+</p>
+
+<p align="center">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Creating%20Dino.gif?raw=true">
+</p>
+
 
 
 ## 🎈 Future Improvements
