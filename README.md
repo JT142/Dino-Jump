@@ -64,7 +64,6 @@ The goal of the game is to get as many points as possible.
 <p align="center">
   <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/cubicbezier.gif?raw=true">
 </p>
-<p align="center"> This [website](https://cubic-bezier.com/#.17,.67,.83,.67) lets you play around with the formula</p>
 
 4. Game logic
 * Implemented a scoring and losing system 
