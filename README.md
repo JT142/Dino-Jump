@@ -58,7 +58,7 @@ The goal of the game is to get as many points as possible.
 * I thought it'd be cute if his legs moved faster whilst in the air, so I added that 
 * Dinosaur's jump should look realistic and adhere to gravity. I came across a formula called cubic bezier that helped to make the jump animation more realistic.
 <p align="center">
-  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Creating%20Dino.gif?raw=true">
+  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/creatingDino.gif?raw=true">
 </p>
 
 <p align="center">
