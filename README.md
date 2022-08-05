@@ -35,7 +35,7 @@ The goal of the game is to get as many points as possible.
 </p>
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png?raw=true">
+  <img width="460" height="400" src="https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png?raw=true">
 </p>
 
 <br> 
@@ -77,11 +77,6 @@ The goal of the game is to get as many points as possible.
 <p align="center">
   <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Final.gif?raw=true">
 </p>
-
-<p align="center">
-  <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Creating%20Dino.gif?raw=true">
-</p>
-
 
 
 ## 🎈 Future Improvements
