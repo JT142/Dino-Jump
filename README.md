@@ -5,7 +5,10 @@
 - CSS
 - JavaScript & JQuery
 - Git & GitHub
-[![](https://skills.thijs.gg/icons?i=js,html,css,jquery,git,github,figma)](https://skills.thijs.gg)
+- Figma 
+<br>
+
+[![](https://skills.thijs.gg/icons?i=js,html,css,jquery,git,github,figma)]
 
 <br>
 
@@ -29,6 +32,7 @@ The goal of the game is to get as many points as possible.
 ![Wireframe] (./images/cloud.png)
 ![Flowchart] 
 
+<br> 
 ### Approach:
 * Create a game border. Make sure game border can be dynamically adjusted 
 * Create vectors that represent Dinosaur and obstacles
@@ -38,7 +42,7 @@ The goal of the game is to get as many points as possible.
 * Add game visuals: Styling for fonts, add sprites, animations and sound effects
 
 
-## Improvements
+## 🎈 Future Improvements
 <ol>
     <li> Create different difficulty levels, where the speed of the obstacles would be increased </li>
     <li> To add more visual effects to the game </li>
