@@ -8,7 +8,7 @@
 - Figma 
 <br>
 
-[![](https://skills.thijs.gg/icons?i=js,html,css,jquery,git,github,figma)]
+![](https://skills.thijs.gg/icons?i=js,html,css,jquery,git,github,figma)
 
 <br>
 
@@ -33,6 +33,7 @@ The goal of the game is to get as many points as possible.
 ![Flowchart] 
 
 <br> 
+
 ### Approach:
 * Create a game border. Make sure game border can be dynamically adjusted 
 * Create vectors that represent Dinosaur and obstacles
