@@ -29,8 +29,8 @@ The goal of the game is to get as many points as possible.
 * When Dino collides with an object, "Game Over" should pop out on the screen 
 * Game should restart after closing the pop out
 
-![Wireframe] (https://github.com/JT142/Dino-Jump/blob/main/images/Wireframe.png)
-![Flowchart] (https://github.com/JT142/Dino-Jump/blob/main/images/Flowchart.png)
+![Wireframe] (./images/wireframe.png)
+![Flowchart] (./images/flowchart.png)
 
 <br> 
 
