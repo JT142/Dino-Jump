@@ -23,7 +23,7 @@ The goal of the game is to get as many points as possible.
 
 ### General idea:
 * Game should start after clicking the 'enter' key
-* Obstacles should be dynamic and moving towards the Dinosaur
+* Obstacles should be moving towards the Dinosaur
 * Dino should be able to jump
 * Scoreboard should increase every time Dino jumps over an object successfully
 * When Dino collides with an object, "Game Over" should pop out on the screen 
