@@ -135,13 +135,6 @@ $(() => {
 })
 
 
-// Next steps:
-
-// 1. Implement start game only when 'Enter' is pressed - Done
-// 2. Fix Game Over bug (Infinite alerts instead of restarting the game)  - Done
-// 3. Increase speed -> To increase speed once score hits 5 - Done
-// 4. Reset score to 0 once game is over - Done
-// 5. Write a README.md: https://github.com/chrysaliswoon/catris-game - Pending 
 
 
 
