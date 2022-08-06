@@ -72,7 +72,6 @@ The goal of the game is to get as many points as possible.
 
 5. Game visuals
 * Ended off by adding to the game visuals, styling the fonts, adding clouds and sound effects 
-* Create game logic: Scoring and losing system 
 
 <p align="center">
   <img width="600" height="200" src="https://github.com/JT142/Dino-Jump/blob/main/images/Final.gif?raw=true">
