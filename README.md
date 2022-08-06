@@ -42,7 +42,7 @@ The goal of the game is to get as many points as possible.
 
 ### Approach:
 
-1. Create a game border. Make sure game border can be dynamically adjusted 
+1. Create a game border. Make sure game border can be adjusted 
 
 2. Obstacles
 * Make two obstacles with random speeds that will move towards the left 
